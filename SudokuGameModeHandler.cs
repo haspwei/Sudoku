@@ -330,22 +330,15 @@ namespace Game
                 }
             }
 
-            int currentValue = tempGrid[row, col];
-            tempGrid[row, col] = 0; 
+            tempGrid[row, col] = 0;
 
             List<int> possibleValues = new List<int>();
-
             for (int num = 1; num <= 9; num++)
             {
                 if (GridUtils.IsValidPlacement(tempGrid, row, col, num))
                 {
                     possibleValues.Add(num);
                 }
-            }
-
-            if (currentValue != 0 && currentValue == _solutionGrid[row, col])
-            {
-                possibleValues.Add(currentValue);
             }
 
             return possibleValues;
